@@ -1,0 +1,28 @@
+name: "Main"
+on:
+  push:
+    branches: [main]
+defaults:
+  run:
+    working-directory: .
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Build PDF
+        uses: lbssousa/latex-music-action@v4.3.0
+        with:
+          root_file: main.tex
+          latexmk_use_lualatex: true
+          latexmk_shell_escape: true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: main
+          path: |
+            *.pdf
+            *.log
