@@ -3,84 +3,91 @@
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
     "features": {
       "ghcr.io/lbssousa/devcontainer-features-texlive-music/lilypond:1": {
-        "version": "2.24.3"
+        "version": "2.24.4"
       },
       "ghcr.io/lbssousa/devcontainer-features-texlive-music/texlive:1": {
-        "version": "2023",
-        "scheme": "full"
+        "version": "latest",
+        "scheme": "basic",
+        "collection-binextra": true,
+        "collection-fontsextra": true,
+        "collection-langeurpoean": true,
+        "collection-langportuguese": true,
+        "collection-latex": true,
+        "collection-latexextra": true,
+        "collection-latexrecommended": true,
+        "collection-luatex": true,
+        "collection-music": true
       }
     },
     "hostRequirements": {
-      "cpus": 4,
-      "memory": "16gb",
-      "storage": "32gb"
-    },
-    "remoteUser": "vscode",
-    "containerUser": "vscode", // needed for Podman, indifferent for Docker
-    "customizations": {
-      "vscode": {
-        "settings": {
-          "editor.bracketPairColorization.enabled": true,
-          "editor.fontLigatures": true,
-          "editor.formatOnPaste": true,
-          "editor.formatOnSave": true,
-          "editor.insertSpaces": true,
-          "editor.renderWhitespace": "boundary",
-          "editor.smoothScrolling": true,
-          "editor.suggestSelection": "recentlyUsedByPrefix",
-          "editor.wordWrap": "bounded",
-          "files.trimTrailingWhitespace": true,
-          "latex-workshop.linting.chktex.enabled": true,
-          "latex-workshop.linting.run": "onType",
-          "latex-workshop.intellisense.package.enabled": true,
-          "latex-workshop.kpsewhich.enabled": true,
-          "latex-workshop.latex.autoBuild.run": "never",
-          "latex-workshop.latex.autoClean.run": "onFailed",
-          "latex-workshop.latex.clean.subfolder.enabled": true,
-          "latex-workshop.latex.external.build.args": [
-            "--shell-escape",
-            "--synctex=1",
-            "--interaction=nonstopmode",
-            "--file-line-error",
-            "--halt-on-error"
-          ],
-          "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
-          "latex-workshop.latex.recipes": [
-            {
-              "name": "latexmk (lualatex)",
-              "tools": [
-                "lualatexmk"
-              ]
-            }
-          ],
-          "latex-workshop.latex.tools": [
-            {
-              "name": "lualatexmk",
-              "command": "latexmk",
-              "args": [
-                "-lualatex",
-                "--shell-escape",
-                "--synctex=1",
-                "--interaction=nonstopmode",
-                "--file-line-error",
-                "--halt-on-error",
-                "%DOC%"
-              ]
-            }
-          ],
-          "latex-workshop.synctex.afterBuild.enabled": true,
-          "latex-workshop.texdoc.args": [
-            "--view",
-            "--shell-escape"
-          ],
-          "latex-workshop.view.pdf.viewer": "tab"
-        },
-        "extensions": [
-          "james-yu.latex-workshop",
-          "tecosaur.latex-utilities",
-          "lhl2617.VSLilyPond"
-        ]
-      }
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "remoteUser": "vscode",
+  "containerUser": "vscode", // needed for Podman, indifferent for Docker
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.bracketPairColorization.enabled": true,
+        "editor.fontLigatures": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true,
+        "editor.renderWhitespace": "boundary",
+        "editor.smoothScrolling": true,
+        "editor.suggestSelection": "recentlyUsedByPrefix",
+        "editor.wordWrap": "bounded",
+        "files.trimTrailingWhitespace": true,
+        "latex-workshop.linting.chktex.enabled": true,
+        "latex-workshop.linting.run": "onType",
+        "latex-workshop.intellisense.package.enabled": true,
+        "latex-workshop.latex.autoBuild.run": "onSave",
+        "latex-workshop.latex.autoClean.run": "onFailed",
+        "latex-workshop.latex.clean.subfolder.enabled": true,
+        "latex-workshop.latex.external.build.args": [
+          "--shell-escape",
+          "--synctex=1",
+          "--interaction=nonstopmode",
+          "--file-line-error",
+          "--halt-on-error"
+        ],
+        "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk (lualatex)",
+            "tools": [
+              "lualatexmk"
+            ]
+          }
+        ],
+        "latex-workshop.latex.tools": [
+          {
+            "name": "lualatexmk",
+            "command": "latexmk",
+            "args": [
+              "--lualatex",
+              "--shell-escape",
+              "--synctex=1",
+              "--interaction=nonstopmode",
+              "--file-line-error",
+              "--halt-on-error",
+              "%DOC%"
+            ]
+          }
+        ],
+        "latex-workshop.synctex.afterBuild.enabled": true,
+        "latex-workshop.texdoc.args": [
+          "--view",
+          "--shell-escape"
+        ],
+        "latex-workshop.view.pdf.viewer": "tab"
+      },
+      "extensions": [
+        "james-yu.latex-workshop",
+        "tecosaur.latex-utilities",
+        "yzhang.markdown-all-in-one"
+      ]
     }
   }
-  
+}
