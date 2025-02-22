@@ -7,16 +7,7 @@
       },
       "ghcr.io/lbssousa/devcontainer-features-texlive-music/texlive:1": {
         "version": "latest",
-        "scheme": "basic",
-        "collection-binextra": true,
-        "collection-fontsextra": true,
-        "collection-langeurpoean": true,
-        "collection-langportuguese": true,
-        "collection-latex": true,
-        "collection-latexextra": true,
-        "collection-latexrecommended": true,
-        "collection-luatex": true,
-        "collection-music": true
+        "scheme": "full"
       }
     },
     "hostRequirements": {
