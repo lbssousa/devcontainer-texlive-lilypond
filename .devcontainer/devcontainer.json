@@ -5,7 +5,7 @@
       "ghcr.io/lbssousa/devcontainer-features-texlive-music/lilypond:1": {
         "version": "2.24.4"
       },
-      "ghcr.io/lbssousa/devcontainer-features-texlive-music/texlive:1": {
+      "ghcr.io/lbssousa/devcontainer-features-texlive-music/texlive:2": {
         "version": "latest",
         "scheme": "full"
       }
